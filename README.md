@@ -90,7 +90,7 @@ Real / Fake Medicine
 
 ---
 
-🧠 Deep Learning Model
+##🧠 Deep Learning Model
 
 The project uses a Convolutional Neural Network (CNN) for image classification.
 
@@ -109,7 +109,7 @@ The trained model then generates a prediction for the uploaded medicine image.
 ---
 .
 
-🌐 Streamlit Web Application
+##🌐 Streamlit Web Application
 
 The trained model is integrated into a Streamlit application.
 
@@ -123,7 +123,7 @@ The application displays the predicted result.
 
 ---
 
-Application
+##Application
 
 Real Medicine Prediction
 
