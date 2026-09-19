@@ -149,3 +149,18 @@ The trained CNN model is integrated into a **Streamlit web application** that pr
 ### Fake Medicine Prediction
 
 ![Fake Medicine Prediction](Screenshots/fake_prediction.png)
+
+---
+
+## ⚙️ Installation & Usage
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/muhammedsinanta/Counterfeit-Medicine-Detection-System-Using-Deep-Learning.git
+
+cd Counterfeit-Medicine-Detection-System-Using-Deep-Learning
+
+pip install -r requirements.txt
+
+streamlit run app.py
