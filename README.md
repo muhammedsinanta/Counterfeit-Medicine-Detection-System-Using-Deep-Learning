@@ -88,7 +88,7 @@ Model Prediction
       ↓
 Real / Fake Medicine
 
----
+```
 
 ## 🧠 Deep Learning Model
 
@@ -119,27 +119,33 @@ if pred[0][0] > 0.5:
     st.success("Real Medicine")
 else:
     st.error("Fake Medicine")
+```
+
+## 🌐 Streamlit Web Application
+
+The trained CNN model is integrated into a **Streamlit web application** that provides an easy-to-use interface for medicine image classification.
+
+### 🔹 How the Application Works
+
+1. Open the Streamlit web application.
+2. Upload a medicine image in JPG, JPEG, or PNG format.
+3. The image is resized to **224 × 224 pixels**.
+4. The image is normalized and passed to the trained CNN model.
+5. The model predicts whether the medicine is **Real** or **Fake**.
+6. The prediction result is displayed in the application.
 
 ---
-.
 
-##🌐 Streamlit Web Application
+## 🖥️ Application
 
-The trained model is integrated into a Streamlit application.
+### Application Interface
 
-Users can:
+![Application Interface](screenshots/app.png)
 
-Open the web application.
-Upload a medicine image.
-The image is resized and preprocessed.
-The trained CNN model processes the image.
-The application displays the predicted result.
+### Real Medicine Prediction
 
----
+![Real Medicine Prediction](screenshots/real_prediction.png)
 
-##Application
+### Fake Medicine Prediction
 
-Real Medicine Prediction
-
-Fake Medicine Prediction
-
+![Fake Medicine Prediction](screenshots/fake_prediction.png)
