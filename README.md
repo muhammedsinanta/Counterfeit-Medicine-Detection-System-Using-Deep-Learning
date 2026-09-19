@@ -87,3 +87,43 @@ Trained CNN Model
 Model Prediction
       ↓
 Real / Fake Medicine
+
+
+🧠 Deep Learning Model
+
+The project uses a Convolutional Neural Network (CNN) for image classification.
+
+The input image is resized to:
+
+224 × 224 pixels
+
+Pixel values are normalized by dividing them by:
+
+255
+
+This converts the pixel values into a range between approximately 0 and 1.
+
+The trained model then generates a prediction for the uploaded medicine image.
+
+
+.
+
+🌐 Streamlit Web Application
+
+The trained model is integrated into a Streamlit application.
+
+Users can:
+
+Open the web application.
+Upload a medicine image.
+The image is resized and preprocessed.
+The trained CNN model processes the image.
+The application displays the predicted result.
+
+
+Application
+
+Real Medicine Prediction
+
+Fake Medicine Prediction
+
