@@ -140,12 +140,12 @@ The trained CNN model is integrated into a **Streamlit web application** that pr
 
 ### Application Interface
 
-![Application Interface](screenshots/app.png)
+![Application Interface](Screenshots/app.png)
 
 ### Real Medicine Prediction
 
-![Real Medicine Prediction](screenshots/real_prediction.png)
+![Real Medicine Prediction](Screenshots/real_prediction.png)
 
 ### Fake Medicine Prediction
 
-![Fake Medicine Prediction](screenshots/fake_prediction.png)
+![Fake Medicine Prediction](Screenshots/fake_prediction.png)
