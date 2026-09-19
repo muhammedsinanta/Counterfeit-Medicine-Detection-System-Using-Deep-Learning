@@ -164,3 +164,19 @@ cd Counterfeit-Medicine-Detection-System-Using-Deep-Learning
 pip install -r requirements.txt
 
 streamlit run app.py
+
+The application will open in your browser at:
+
+```text
+
+http://localhost:8501
+
+```
+
+Upload a JPG, JPEG, or PNG medicine image.
+The image is resized to 224 × 224 pixels.
+The trained CNN model processes the image.
+The application displays the prediction as Real Medicine or Fake Medicine.
+
+
+
