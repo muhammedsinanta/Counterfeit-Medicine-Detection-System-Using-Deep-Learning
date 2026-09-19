@@ -152,31 +152,44 @@ The trained CNN model is integrated into a **Streamlit web application** that pr
 
 ---
 
+---
+
 ## ⚙️ Installation & Usage
 
 ### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/muhammedsinanta/Counterfeit-Medicine-Detection-System-Using-Deep-Learning.git
+```
 
+### 2. Navigate to the Project
+
+```bash
 cd Counterfeit-Medicine-Detection-System-Using-Deep-Learning
+```
 
+### 3. Install Dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
+### 4. Run the Streamlit Application
+
+```bash
 streamlit run app.py
+```
 
 The application will open in your browser at:
 
-```text
+`http://localhost:8501`
 
-http://localhost:8501
+### 5. Make a Prediction
 
-```
-
-Upload a JPG, JPEG, or PNG medicine image.
-The image is resized to 224 × 224 pixels.
-The trained CNN model processes the image.
-The application displays the prediction as Real Medicine or Fake Medicine.
+1. Upload a JPG, JPEG, or PNG medicine image.
+2. The image is resized to 224 × 224 pixels.
+3. The trained CNN model processes the image.
+4. The application displays the prediction as **Real Medicine** or **Fake Medicine**.
 
 
 
