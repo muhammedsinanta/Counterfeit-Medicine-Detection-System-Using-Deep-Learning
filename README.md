@@ -90,21 +90,35 @@ Real / Fake Medicine
 
 ---
 
-##🧠 Deep Learning Model
+## 🧠 Deep Learning Model
 
-The project uses a Convolutional Neural Network (CNN) for image classification.
+This project uses a **Convolutional Neural Network (CNN)** for binary image classification.
 
-The input image is resized to:
+The model is trained to distinguish between:
 
-224 × 224 pixels
+- ✅ **Real Medicine**
+- ❌ **Fake Medicine**
 
-Pixel values are normalized by dividing them by:
+### 🔹 Model Input
 
-255
+Each uploaded medicine image is:
 
-This converts the pixel values into a range between approximately 0 and 1.
+1. Resized to **224 × 224 pixels**
+2. Converted into a numerical image array
+3. Normalized by dividing pixel values by **255**
+4. Passed to the trained CNN model
 
-The trained model then generates a prediction for the uploaded medicine image.
+### 🔹 Model Prediction
+
+The trained model generates a prediction value between `0` and `1`.
+
+The current application uses a **0.5 threshold**:
+
+```python
+if pred[0][0] > 0.5:
+    st.success("Real Medicine")
+else:
+    st.error("Fake Medicine")
 
 ---
 .
