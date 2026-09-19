@@ -88,6 +88,7 @@ Model Prediction
       ↓
 Real / Fake Medicine
 
+---
 
 🧠 Deep Learning Model
 
@@ -105,7 +106,7 @@ This converts the pixel values into a range between approximately 0 and 1.
 
 The trained model then generates a prediction for the uploaded medicine image.
 
-
+---
 .
 
 🌐 Streamlit Web Application
@@ -120,6 +121,7 @@ The image is resized and preprocessed.
 The trained CNN model processes the image.
 The application displays the predicted result.
 
+---
 
 Application
 
