@@ -1,15 +1,19 @@
 import streamlit as st
-from tensorflow.keras.models import load_model
+import tensorflow as tf
 from tensorflow.keras.preprocessing import image
 import numpy as np
 
-# Load trained model
-model = load_model("medicine_model.keras")
+# Load TFLite model
+interpreter = tf.lite.Interpreter(
+    model_path="medicine_model_float16.tflite"
+)
+interpreter.allocate_tensors()
 
-# App title
+input_details = interpreter.get_input_details()
+output_details = interpreter.get_output_details()
+
 st.title("💊 Counterfeit Medicine Detection")
 
-# Upload image
 uploaded_file = st.file_uploader(
     "Upload Medicine Image",
     type=["jpg", "png", "jpeg"]
@@ -17,28 +21,42 @@ uploaded_file = st.file_uploader(
 
 if uploaded_file is not None:
 
-    # Load and display image
     img = image.load_img(
         uploaded_file,
         target_size=(224, 224)
     )
 
-    st.image(uploaded_file, caption="Uploaded Medicine Image")
+    st.image(
+        uploaded_file,
+        caption="Uploaded Medicine Image"
+    )
 
-    # Convert image to array
-    img = image.img_to_array(img)
+    img_array = image.img_to_array(img)
+    img_array = np.expand_dims(img_array, axis=0)
+    img_array = img_array / 255.0
 
-    # Add batch dimension
-    img = np.expand_dims(img, axis=0)
+    # TFLite prediction
+    interpreter.set_tensor(
+        input_details[0]["index"],
+        img_array.astype(np.float32)
+    )
 
-    # Normalize pixel values
-    img = img / 255.0
+    interpreter.invoke()
 
-    # Make prediction
-    pred = model.predict(img)
+    prediction = interpreter.get_tensor(
+        output_details[0]["index"]
+    )
 
-    # Classification
-    if pred[0][0] > 0.5:
-        st.success("Real Medicine")
+    score = float(prediction[0][0])
+
+    # Prediction and confidence
+    if score > 0.5:
+        confidence = score
+        st.success(
+            f"✅ Real Medicine — Confidence: {confidence:.2%}"
+        )
     else:
-        st.error("Fake Medicine")
+        confidence = 1 - score
+        st.error(
+            f"❌ Fake Medicine — Confidence: {confidence:.2%}"
+        )
