@@ -120,6 +120,29 @@ if pred[0][0] > 0.5:
 else:
     st.error("Fake Medicine")
 ```
+## 📊 Model Performance
+
+The CNN model was evaluated on a held-out test dataset containing 449 images using standard classification metrics.
+
+| Metric | Score |
+|---|---:|
+| Accuracy | 91.09% |
+| Precision | 91.03% |
+| Recall | 95.47% |
+| F1 Score | 93.20% |
+
+### Classification Report
+
+| Class | Precision | Recall | F1 Score | Support |
+|---|---:|---:|---:|---:|
+| Fake | 91% | 83% | 87% | 162 |
+| Real | 91% | 95% | 93% | 287 |
+
+### Confusion Matrix
+
+```text
+[[135, 27],
+ [ 13, 274]]
 
 ## 🌐 Streamlit Web Application
 
