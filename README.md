@@ -143,6 +143,8 @@ The CNN model was evaluated on a held-out test dataset containing 449 images usi
 ```text
 [[135, 27],
  [ 13, 274]]
+```
+
 
 ## 🌐 Streamlit Web Application
 
